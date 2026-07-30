@@ -95,35 +95,6 @@ export const LoginPage = () => {
           </div>
         )}
 
-        {/* 1-Click Demo Login Banner */}
-        <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-emeraldDark-900/70 border border-rose-200 dark:border-white/10 text-xs space-y-2">
-          <div className="flex items-center justify-between font-bold text-rose-700 dark:text-rose-300">
-            <span className="flex items-center gap-1.5">
-              <UserCheck className="w-4 h-4 text-rose-500" /> Instant Demo Account
-            </span>
-            <span className="text-[10px] bg-rose-200 dark:bg-rose-900 text-rose-800 dark:text-rose-200 px-2 py-0.5 rounded-full uppercase">
-              Fast Test
-            </span>
-          </div>
-          <p className="text-[11px] text-gray-600 dark:text-gray-300">
-            Click below to sign in instantly as <strong>{DEMO_USER.name}</strong> ({DEMO_USER.email}).
-          </p>
-          <button
-            type="button"
-            onClick={handleDemoLogin}
-            className="w-full py-2.5 px-4 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl text-xs shadow-md transition-all flex items-center justify-center gap-2 active:scale-95"
-          >
-            <Sparkles className="w-4 h-4 fill-white" />
-            <span>Sign In with Demo Account</span>
-          </button>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="h-px bg-gray-200 dark:bg-white/10 flex-1" />
-          <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">or email login</span>
-          <div className="h-px bg-gray-200 dark:bg-white/10 flex-1" />
-        </div>
-
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
