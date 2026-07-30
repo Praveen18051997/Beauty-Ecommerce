@@ -7,6 +7,12 @@
     @apply antialiased scroll-smooth;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
+
+  /* Hide browser native password reveal and clear buttons (Microsoft Edge / IE / WebKit) */
+  input::-ms-reveal,
+  input::-ms-clear {
+    display: none !important;
+  }
 }
 
 /* Custom Glassmorphism & Luxury Styling */
@@ -18,33 +24,35 @@
 }
 
 .dark .glass-panel {
-  background: rgba(18, 32, 29, 0.75);
+  background: rgba(12, 23, 51, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.15);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.6);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(239, 246, 255, 0.6) 100%);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(224, 169, 150, 0.2);
+  border: 1px solid rgba(147, 197, 253, 0.5);
+  box-shadow: 0 4px 15px -3px rgba(37, 99, 235, 0.08);
 }
 
 .dark .glass-card {
-  background: rgba(26, 44, 41, 0.6);
+  background: linear-gradient(135deg, rgba(15, 26, 48, 0.8) 0%, rgba(12, 23, 51, 0.7) 100%);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.3);
 }
 
 /* Gradient Text Utilities */
 .text-gradient-gold {
-  background: linear-gradient(135deg, #C7A75B 0%, #E5D8B1 50%, #967432 100%);
+  background: linear-gradient(135deg, #0284C7 0%, #38BDF8 50%, #0369A1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-rose {
-  background: linear-gradient(135deg, #C67865 0%, #E7BDB2 50%, #7B382B 100%);
+  background: linear-gradient(135deg, #2563EB 0%, #60A5FA 50%, #1E40AF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -60,20 +68,20 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(198, 120, 101, 0.3);
+  background: rgba(37, 99, 235, 0.3);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(198, 120, 101, 0.6);
+  background: rgba(37, 99, 235, 0.6);
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.2);
+  background: rgba(56, 189, 248, 0.2);
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: rgba(212, 175, 55, 0.4);
+  background: rgba(56, 189, 248, 0.4);
 }
 
 /* Shimmer Animation for Loading Skeleton */

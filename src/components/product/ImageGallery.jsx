@@ -29,7 +29,7 @@ export const ImageGallery = ({ images = [], name = '' }) => {
         onMouseEnter={() => setIsZoomed(true)}
         onMouseLeave={() => setIsZoomed(false)}
         onMouseMove={handleMouseMove}
-        className="relative aspect-square w-full rounded-3xl overflow-hidden bg-rose-50/50 dark:bg-emeraldDark-800/50 border border-rose-100 dark:border-white/10 shadow-lg cursor-crosshair group"
+        className="relative aspect-square w-full rounded-3xl overflow-hidden bg-blue-50/50 dark:bg-[#070E20]/50 border border-blue-200/80 dark:border-blue-800/40 shadow-lg cursor-crosshair group"
       >
         <img
           src={currentSrc}
@@ -66,7 +66,7 @@ export const ImageGallery = ({ images = [], name = '' }) => {
               onClick={() => setActiveImage(idx)}
               className={`relative w-20 h-20 rounded-2xl overflow-hidden border-2 transition-all shrink-0 ${
                 activeImage === idx
-                  ? 'border-rose-500 scale-105 shadow-md'
+                  ? 'border-blue-600 dark:border-blue-400 scale-105 shadow-md'
                   : 'border-transparent opacity-70 hover:opacity-100'
               }`}
             >

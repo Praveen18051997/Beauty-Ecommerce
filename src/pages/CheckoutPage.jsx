@@ -99,7 +99,7 @@ export const CheckoutPage = () => {
         <p className="text-xs text-gray-500">Your cart is empty. Add products to proceed.</p>
         <button
           onClick={() => navigate('/shop')}
-          className="py-3 px-6 bg-rose-500 text-white font-bold text-xs rounded-xl"
+          className="py-3 px-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold text-xs rounded-xl shadow-md border border-blue-400/30 active:scale-95 transition-all"
         >
           Go to Shop
         </button>
@@ -111,7 +111,7 @@ export const CheckoutPage = () => {
     <div className="pt-28 pb-20 px-4 lg:px-8 max-w-7xl mx-auto space-y-10">
       {/* Header */}
       <div className="text-center max-w-md mx-auto">
-        <span className="text-xs font-bold text-rose-500 uppercase tracking-widest flex items-center justify-center gap-1.5 mb-1">
+        <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest flex items-center justify-center gap-1.5 mb-1">
           <Lock className="w-4 h-4" /> 256-Bit Encrypted Secure Checkout
         </span>
         <h1 className="font-serif font-extrabold text-3xl sm:text-4xl text-gray-900 dark:text-white">
@@ -123,14 +123,14 @@ export const CheckoutPage = () => {
         {/* Left Column: Multi-Step Forms */}
         <div className="lg:col-span-7 space-y-8">
           {/* Form Step Indicators */}
-          <div className="flex items-center justify-between border-b border-rose-100 dark:border-white/10 pb-4">
+          <div className="flex items-center justify-between border-b border-blue-100 dark:border-blue-900/40 pb-4">
             <button
               onClick={() => setStep(1)}
               className={`flex items-center gap-2 text-xs font-bold uppercase tracking-wider ${
-                step === 1 ? 'text-rose-500' : 'text-gray-400'
+                step === 1 ? 'text-blue-600 dark:text-blue-400 font-extrabold' : 'text-gray-400'
               }`}
             >
-              <span className="w-6 h-6 rounded-full bg-rose-500 text-white flex items-center justify-center text-[10px]">1</span>
+              <span className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">1</span>
               1. Shipping & Contact
             </button>
             <button
@@ -140,17 +140,17 @@ export const CheckoutPage = () => {
                 }
               }}
               className={`flex items-center gap-2 text-xs font-bold uppercase tracking-wider ${
-                step === 2 ? 'text-rose-500' : 'text-gray-400'
+                step === 2 ? 'text-blue-600 dark:text-blue-400 font-extrabold' : 'text-gray-400'
               }`}
             >
-              <span className="w-6 h-6 rounded-full bg-rose-500 text-white flex items-center justify-center text-[10px]">2</span>
+              <span className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">2</span>
               2. Payment Method
             </button>
           </div>
 
           {/* Step 1: Shipping Details */}
           {step === 1 && (
-            <form onSubmit={handleNextStep} className="bg-white dark:bg-[#16221F] p-6 sm:p-8 rounded-3xl border border-rose-100 dark:border-white/10 shadow-sm space-y-4">
+            <form onSubmit={handleNextStep} className="bg-white dark:bg-[#0C1733] p-6 sm:p-8 rounded-3xl border border-blue-200/80 dark:border-blue-800/40 shadow-sm space-y-4">
               <h3 className="font-serif font-bold text-xl text-gray-900 dark:text-white mb-4">
                 Shipping Address
               </h3>
@@ -158,7 +158,7 @@ export const CheckoutPage = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
-                    First Name <span className="text-rose-500">*</span>
+                    First Name <span className="text-blue-600 dark:text-blue-400">*</span>
                   </label>
                   <input
                     type="text"
@@ -166,13 +166,13 @@ export const CheckoutPage = () => {
                     placeholder="Enter first name"
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2.5 bg-gray-50 dark:bg-[#0B1513] border border-gray-200 dark:border-white/10 rounded-xl text-xs outline-none focus:border-rose-500"
+                    className="w-full px-4 py-2.5 bg-gray-50 dark:bg-[#070E20] border border-blue-200/80 dark:border-blue-800/40 rounded-xl text-xs outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                     required
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
-                    Last Name <span className="text-rose-500">*</span>
+                    Last Name <span className="text-blue-600 dark:text-blue-400">*</span>
                   </label>
                   <input
                     type="text"
@@ -180,7 +180,7 @@ export const CheckoutPage = () => {
                     placeholder="Enter last name"
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2.5 bg-gray-50 dark:bg-[#0B1513] border border-gray-200 dark:border-white/10 rounded-xl text-xs outline-none focus:border-rose-500"
+                    className="w-full px-4 py-2.5 bg-gray-50 dark:bg-[#070E20] border border-blue-200/80 dark:border-blue-800/40 rounded-xl text-xs outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                     required
                   />
                 </div>
@@ -189,7 +189,7 @@ export const CheckoutPage = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
-                    Email Address <span className="text-rose-500">*</span>
+                    Email Address <span className="text-blue-600 dark:text-blue-400">*</span>
                   </label>
                   <input
                     type="email"
@@ -197,13 +197,13 @@ export const CheckoutPage = () => {
                     placeholder="Enter email address"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2.5 bg-gray-50 dark:bg-[#0B1513] border border-gray-200 dark:border-white/10 rounded-xl text-xs outline-none focus:border-rose-500"
+                    className="w-full px-4 py-2.5 bg-gray-50 dark:bg-[#070E20] border border-blue-200/80 dark:border-blue-800/40 rounded-xl text-xs outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                     required
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
-                    Phone Number <span className="text-rose-500">*</span>
+                    Phone Number <span className="text-blue-600 dark:text-blue-400">*</span>
                   </label>
                   <input
                     type="tel"
@@ -211,7 +211,7 @@ export const CheckoutPage = () => {
                     placeholder="Enter phone number"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2.5 bg-gray-50 dark:bg-[#0B1513] border border-gray-200 dark:border-white/10 rounded-xl text-xs outline-none focus:border-rose-500"
+                    className="w-full px-4 py-2.5 bg-gray-50 dark:bg-[#070E20] border border-blue-200/80 dark:border-blue-800/40 rounded-xl text-xs outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                     required
                   />
                 </div>
@@ -219,7 +219,7 @@ export const CheckoutPage = () => {
 
               <div>
                 <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
-                  Street Address <span className="text-rose-500">*</span>
+                  Street Address <span className="text-blue-600 dark:text-blue-400">*</span>
                 </label>
                 <input
                   type="text"
@@ -227,7 +227,7 @@ export const CheckoutPage = () => {
                   placeholder="Enter house no., street name, area"
                   value={formData.address}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2.5 bg-gray-50 dark:bg-[#0B1513] border border-gray-200 dark:border-white/10 rounded-xl text-xs outline-none focus:border-rose-500"
+                  className="w-full px-4 py-2.5 bg-gray-50 dark:bg-[#070E20] border border-blue-200/80 dark:border-blue-800/40 rounded-xl text-xs outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                   required
                 />
               </div>
@@ -235,7 +235,7 @@ export const CheckoutPage = () => {
               <div className="grid grid-cols-3 gap-3">
                 <div>
                   <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
-                    City <span className="text-rose-500">*</span>
+                    City <span className="text-blue-600 dark:text-blue-400">*</span>
                   </label>
                   <input
                     type="text"
@@ -243,13 +243,13 @@ export const CheckoutPage = () => {
                     placeholder="Enter city"
                     value={formData.city}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2.5 bg-gray-50 dark:bg-[#0B1513] border border-gray-200 dark:border-white/10 rounded-xl text-xs outline-none focus:border-rose-500"
+                    className="w-full px-3 py-2.5 bg-gray-50 dark:bg-[#070E20] border border-blue-200/80 dark:border-blue-800/40 rounded-xl text-xs outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                     required
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
-                    State <span className="text-rose-500">*</span>
+                    State <span className="text-blue-600 dark:text-blue-400">*</span>
                   </label>
                   <input
                     type="text"
@@ -257,13 +257,13 @@ export const CheckoutPage = () => {
                     placeholder="Enter state"
                     value={formData.state}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2.5 bg-gray-50 dark:bg-[#0B1513] border border-gray-200 dark:border-white/10 rounded-xl text-xs outline-none focus:border-rose-500"
+                    className="w-full px-3 py-2.5 bg-gray-50 dark:bg-[#070E20] border border-blue-200/80 dark:border-blue-800/40 rounded-xl text-xs outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                     required
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
-                    Zip Code <span className="text-rose-500">*</span>
+                    Zip Code <span className="text-blue-600 dark:text-blue-400">*</span>
                   </label>
                   <input
                     type="text"
@@ -271,7 +271,7 @@ export const CheckoutPage = () => {
                     placeholder="Enter zip/PIN"
                     value={formData.zip}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2.5 bg-gray-50 dark:bg-[#0B1513] border border-gray-200 dark:border-white/10 rounded-xl text-xs outline-none focus:border-rose-500"
+                    className="w-full px-3 py-2.5 bg-gray-50 dark:bg-[#070E20] border border-blue-200/80 dark:border-blue-800/40 rounded-xl text-xs outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                     required
                   />
                 </div>
@@ -281,28 +281,28 @@ export const CheckoutPage = () => {
               <div className="pt-4">
                 <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-2">Delivery Option</label>
                 <div className="space-y-2">
-                  <label className="flex items-center justify-between p-3.5 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-[#0B1513] cursor-pointer">
+                  <label className="flex items-center justify-between p-3.5 rounded-xl border border-blue-200/80 dark:border-blue-800/40 bg-gray-50 dark:bg-[#070E20] cursor-pointer">
                     <div className="flex items-center gap-3">
                       <input
                         type="radio"
                         name="delivery"
                         checked={deliveryOption === 'standard'}
                         onChange={() => setDeliveryOption('standard')}
-                        className="text-rose-500"
+                        className="text-blue-600 focus:ring-blue-500"
                       />
                       <div>
                         <span className="text-xs font-bold text-gray-900 dark:text-white block">Standard Express Shipping</span>
                         <span className="text-[10px] text-gray-500">Delivered in 3-5 business days</span>
                       </div>
                     </div>
-                    <span className="text-xs font-bold text-rose-500">₹149.00</span>
+                    <span className="text-xs font-bold text-blue-600 dark:text-blue-400">₹149.00</span>
                   </label>
                 </div>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-2xl text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 transition-all mt-4"
+                className="w-full py-4 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold rounded-2xl text-xs uppercase tracking-wider shadow-lg shadow-blue-500/25 transition-all mt-4 border border-blue-400/30 active:scale-95"
               >
                 Continue to Payment →
               </button>
@@ -311,7 +311,7 @@ export const CheckoutPage = () => {
 
           {/* Step 2: Payment Details */}
           {step === 2 && (
-            <div className="bg-white dark:bg-[#16221F] p-6 sm:p-8 rounded-3xl border border-rose-100 dark:border-white/10 shadow-sm space-y-6">
+            <div className="bg-white dark:bg-[#0C1733] p-6 sm:p-8 rounded-3xl border border-blue-200/80 dark:border-blue-800/40 shadow-sm space-y-6">
               <h3 className="font-serif font-bold text-xl text-gray-900 dark:text-white">
                 Select Payment Method
               </h3>
@@ -323,8 +323,8 @@ export const CheckoutPage = () => {
                     type="button"
                     onClick={() => setPaymentMethod(m)}
                     className={`p-3 rounded-2xl border text-xs font-bold capitalize transition-all ${paymentMethod === m
-                        ? 'border-rose-500 bg-rose-50 dark:bg-rose-950/60 text-rose-600'
-                        : 'border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300'
+                        ? 'border-blue-500 bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 shadow-sm'
+                        : 'border-blue-200/60 dark:border-blue-800/40 text-gray-600 dark:text-gray-300'
                       }`}
                   >
                     {m === 'card' && 'Credit Card'}
@@ -345,7 +345,7 @@ export const CheckoutPage = () => {
                         name="cardNumber"
                         value={formData.cardNumber}
                         onChange={handleInputChange}
-                        className="w-full pl-10 pr-3 py-2.5 bg-gray-50 dark:bg-[#0B1513] border border-gray-200 dark:border-white/10 rounded-xl text-xs outline-none focus:border-rose-500"
+                        className="w-full pl-10 pr-3 py-2.5 bg-gray-50 dark:bg-[#070E20] border border-blue-200/80 dark:border-blue-800/40 rounded-xl text-xs outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                       />
                       <CreditCard className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
                     </div>
@@ -359,7 +359,7 @@ export const CheckoutPage = () => {
                         name="cardExpiry"
                         value={formData.cardExpiry}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2.5 bg-gray-50 dark:bg-[#0B1513] border border-gray-200 dark:border-white/10 rounded-xl text-xs outline-none focus:border-rose-500"
+                        className="w-full px-3 py-2.5 bg-gray-50 dark:bg-[#070E20] border border-blue-200/80 dark:border-blue-800/40 rounded-xl text-xs outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                       />
                     </div>
                     <div>
@@ -369,7 +369,7 @@ export const CheckoutPage = () => {
                         name="cardCvc"
                         value={formData.cardCvc}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2.5 bg-gray-50 dark:bg-[#0B1513] border border-gray-200 dark:border-white/10 rounded-xl text-xs outline-none focus:border-rose-500"
+                        className="w-full px-3 py-2.5 bg-gray-50 dark:bg-[#070E20] border border-blue-200/80 dark:border-blue-800/40 rounded-xl text-xs outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                       />
                     </div>
                   </div>
@@ -380,14 +380,14 @@ export const CheckoutPage = () => {
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="py-4 px-6 bg-gray-100 dark:bg-emeraldDark-800 text-gray-700 dark:text-gray-200 font-bold rounded-2xl text-xs uppercase"
+                  className="py-4 px-6 bg-gray-100 dark:bg-[#070E20] text-gray-700 dark:text-gray-200 font-bold rounded-2xl text-xs uppercase"
                 >
                   ← Back
                 </button>
                 <button
                   type="button"
                   onClick={handleCompleteOrder}
-                  className="flex-1 py-4 bg-rose-500 hover:bg-rose-600 text-white font-extrabold rounded-2xl text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 transition-all"
+                  className="flex-1 py-4 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold rounded-2xl text-xs uppercase tracking-wider shadow-lg shadow-blue-500/25 transition-all border border-blue-400/30 active:scale-95"
                 >
                   Place Order (₹{grandTotal.toFixed(2)})
                 </button>
@@ -398,12 +398,12 @@ export const CheckoutPage = () => {
 
         {/* Right Column: Order Summary Card */}
         <div className="lg:col-span-5">
-          <div className="bg-white dark:bg-[#16221F] p-6 rounded-3xl border border-rose-100 dark:border-white/10 shadow-sm space-y-4 sticky top-32">
-            <h3 className="font-serif font-bold text-xl text-gray-900 dark:text-white pb-3 border-b border-rose-100 dark:border-white/10">
+          <div className="bg-white dark:bg-[#0C1733] p-6 rounded-3xl border border-blue-200/80 dark:border-blue-800/40 shadow-sm space-y-4 sticky top-32">
+            <h3 className="font-serif font-bold text-xl text-gray-900 dark:text-white pb-3 border-b border-blue-100 dark:border-blue-900/40">
               Order Items ({cart.length})
             </h3>
 
-            <div className="divide-y divide-rose-100 dark:divide-white/5 max-h-72 overflow-y-auto">
+            <div className="divide-y divide-blue-100 dark:divide-blue-900/40 max-h-72 overflow-y-auto">
               {cart.map((item) => (
                 <div key={item.cartKey} className="py-3 flex items-center gap-3">
                   <img
@@ -423,16 +423,16 @@ export const CheckoutPage = () => {
               ))}
             </div>
 
-            <div className="space-y-2 text-xs text-gray-600 dark:text-gray-300 pt-3 border-t border-rose-100 dark:border-white/10">
+            <div className="space-y-2 text-xs text-gray-600 dark:text-gray-300 pt-3 border-t border-blue-100 dark:border-blue-900/40">
               <div className="flex justify-between"><span>Subtotal</span><span>₹{subtotal.toFixed(2)}</span></div>
               {discountAmount > 0 && (
-                <div className="flex justify-between text-rose-500 font-bold"><span>Discount</span><span>-₹{discountAmount.toFixed(2)}</span></div>
+                <div className="flex justify-between text-blue-600 dark:text-blue-400 font-bold"><span>Discount</span><span>-₹{discountAmount.toFixed(2)}</span></div>
               )}
               <div className="flex justify-between"><span>Shipping</span><span>₹{shippingFee.toFixed(2)}</span></div>
               <div className="flex justify-between"><span>Tax (8%)</span><span>₹{estimatedTax.toFixed(2)}</span></div>
-              <div className="pt-2 border-t border-rose-100 dark:border-white/10 flex justify-between items-baseline font-bold text-sm text-gray-900 dark:text-white">
+              <div className="pt-2 border-t border-blue-100 dark:border-blue-900/40 flex justify-between items-baseline font-bold text-sm text-gray-900 dark:text-white">
                 <span>Grand Total</span>
-                <span className="text-2xl font-extrabold text-rose-500">₹{grandTotal.toFixed(2)}</span>
+                <span className="text-2xl font-extrabold text-blue-600 dark:text-blue-400">₹{grandTotal.toFixed(2)}</span>
               </div>
             </div>
           </div>

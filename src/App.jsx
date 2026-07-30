@@ -41,7 +41,7 @@ export function App() {
               <CompareProvider>
                 <CartProvider>
                   <ScrollToTop />
-                  <div className="min-h-screen flex flex-col justify-between bg-[#FAF7F5] dark:bg-[#0B1513] text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
+                  <div className="min-h-screen flex flex-col justify-between bg-gradient-to-b from-blue-50/40 via-slate-50 to-sky-50/30 dark:from-[#050A18] dark:via-[#070E20] dark:to-[#0C1733] text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
                     <Header />
                     <main className="flex-1">
                       <Routes>

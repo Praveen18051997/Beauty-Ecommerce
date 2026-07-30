@@ -48,7 +48,7 @@ export const BeautyQuizPage = () => {
     <div className="pt-28 pb-20 px-4 lg:px-8 max-w-4xl mx-auto space-y-10">
       {/* Header */}
       <div className="text-center max-w-xl mx-auto space-y-2">
-        <span className="text-xs font-bold text-rose-500 uppercase tracking-widest flex items-center justify-center gap-1.5">
+        <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest flex items-center justify-center gap-1.5">
           <Sparkles className="w-4 h-4" /> AI Skin & Beauty Diagnostic
         </span>
         <h1 className="font-serif font-extrabold text-4xl text-gray-900 dark:text-white">
@@ -60,17 +60,17 @@ export const BeautyQuizPage = () => {
       </div>
 
       {!isCompleted ? (
-        <div className="bg-white dark:bg-[#16221F] p-8 sm:p-12 rounded-3xl border border-rose-100 dark:border-white/10 shadow-xl space-y-8 animate-slide-up">
+        <div className="bg-white dark:bg-[#0C1733] p-8 sm:p-12 rounded-3xl border border-blue-200/80 dark:border-blue-800/40 shadow-xl space-y-8 animate-slide-up">
           {/* Progress Bar */}
           <div className="space-y-2">
             <div className="flex items-center justify-between text-xs font-bold text-gray-400">
               <span>Question {currentStep + 1} of {quizQuestions.length}</span>
-              <span className="text-rose-500">{Math.round(((currentStep + 1) / quizQuestions.length) * 100)}% Completed</span>
+              <span className="text-blue-600 dark:text-blue-400">{Math.round(((currentStep + 1) / quizQuestions.length) * 100)}% Completed</span>
             </div>
-            <div className="w-full bg-rose-100 dark:bg-emeraldDark-800 h-2 rounded-full overflow-hidden">
+            <div className="w-full bg-blue-100 dark:bg-[#070E20] h-2.5 rounded-full overflow-hidden">
               <div
                 style={{ width: `${((currentStep + 1) / quizQuestions.length) * 100}%` }}
-                className="bg-rose-500 h-full rounded-full transition-all duration-300"
+                className="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 h-full rounded-full transition-all duration-300 shadow-sm"
               />
             </div>
           </div>
@@ -89,13 +89,13 @@ export const BeautyQuizPage = () => {
               <button
                 key={idx}
                 onClick={() => handleSelectOption(opt.value)}
-                className="p-5 rounded-2xl border border-rose-100 dark:border-white/10 bg-gray-50/50 dark:bg-[#0B1513]/50 hover:bg-rose-50 dark:hover:bg-emeraldDark-800 hover:border-rose-300 text-left transition-all group flex flex-col justify-between"
+                className="p-5 rounded-2xl border border-blue-100 dark:border-blue-800/30 bg-gray-50/50 dark:bg-[#070E20]/50 hover:bg-blue-50 dark:hover:bg-[#0C1733] hover:border-blue-400 text-left transition-all group flex flex-col justify-between"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <h4 className="font-serif font-bold text-base text-gray-900 dark:text-white group-hover:text-rose-500">
+                  <h4 className="font-serif font-bold text-base text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {opt.label}
                   </h4>
-                  <div className="w-6 h-6 rounded-full border border-gray-300 group-hover:border-rose-500 group-hover:bg-rose-500 text-white flex items-center justify-center text-xs font-bold">
+                  <div className="w-6 h-6 rounded-full border border-gray-300 group-hover:border-blue-600 group-hover:bg-blue-600 text-white flex items-center justify-center text-xs font-bold transition-all">
                     →
                   </div>
                 </div>
@@ -116,12 +116,12 @@ export const BeautyQuizPage = () => {
         </div>
       ) : (
         /* Quiz Results Screen */
-        <div className="bg-white dark:bg-[#16221F] p-8 sm:p-12 rounded-3xl border border-rose-100 dark:border-white/10 shadow-xl space-y-8 animate-fade-in">
+        <div className="bg-white dark:bg-[#0C1733] p-8 sm:p-12 rounded-3xl border border-blue-200/80 dark:border-blue-800/40 shadow-xl space-y-8 animate-fade-in">
           <div className="text-center space-y-3">
-            <div className="w-16 h-16 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center mx-auto shadow-md">
-              <Sparkles className="w-8 h-8 fill-rose-500" />
+            <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto shadow-md">
+              <Sparkles className="w-8 h-8 fill-blue-600" />
             </div>
-            <span className="text-xs font-bold text-rose-500 uppercase tracking-widest block">
+            <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest block">
               Diagnostic Complete
             </span>
             <h2 className="font-serif font-extrabold text-3xl text-gray-900 dark:text-white">
@@ -137,10 +137,10 @@ export const BeautyQuizPage = () => {
             {recommendedRegimen.map((product, idx) => (
               <div
                 key={product.id}
-                className="p-4 rounded-2xl bg-rose-50/50 dark:bg-emeraldDark-900/50 border border-rose-100 dark:border-white/5 space-y-3 flex flex-col justify-between"
+                className="p-4 rounded-2xl bg-blue-50/50 dark:bg-[#070E20]/50 border border-blue-100 dark:border-blue-800/30 space-y-3 flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-[10px] font-bold text-rose-500 uppercase tracking-wider block mb-1">
+                  <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider block mb-1">
                     Step {idx + 1}: {idx === 0 ? 'Hydrate & Plump' : idx === 1 ? 'Target & Balance' : 'Shine & Nourish'}
                   </span>
                   <img
@@ -154,11 +154,11 @@ export const BeautyQuizPage = () => {
                   <h4 className="font-serif font-bold text-sm text-gray-900 dark:text-white line-clamp-1">
                     {product.name}
                   </h4>
-                  <span className="text-xs font-bold text-rose-500">${product.price.toFixed(2)}</span>
+                  <span className="text-xs font-bold text-blue-600 dark:text-blue-400">${product.price.toFixed(2)}</span>
                 </div>
                 <button
                   onClick={() => addToCart(product, 1)}
-                  className="w-full py-2 bg-white dark:bg-[#16221F] hover:bg-rose-500 hover:text-white text-xs font-bold rounded-xl border border-rose-200 dark:border-white/10"
+                  className="w-full py-2 bg-white dark:bg-[#0C1733] hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white text-xs font-bold rounded-xl border border-blue-200 dark:border-blue-800/40 transition-all shadow-sm"
                 >
                   Add Step {idx + 1}
                 </button>
@@ -167,7 +167,7 @@ export const BeautyQuizPage = () => {
           </div>
 
           {/* Action Footer */}
-          <div className="pt-6 border-t border-rose-100 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="pt-6 border-t border-blue-100 dark:border-blue-900/40 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
               <span className="text-xs text-gray-500 block">Total Routine Price:</span>
               <span className="font-bold text-2xl text-gray-900 dark:text-white">
@@ -178,13 +178,13 @@ export const BeautyQuizPage = () => {
             <div className="flex items-center gap-3 w-full sm:w-auto">
               <button
                 onClick={resetQuiz}
-                className="py-3 px-5 bg-gray-100 dark:bg-emeraldDark-800 text-gray-600 dark:text-gray-300 font-bold rounded-2xl text-xs flex items-center gap-1.5"
+                className="py-3 px-5 bg-gray-100 dark:bg-[#070E20] text-gray-600 dark:text-gray-300 font-bold rounded-2xl text-xs flex items-center gap-1.5 hover:text-blue-600"
               >
                 <RefreshCw className="w-4 h-4" /> Retake Quiz
               </button>
               <button
                 onClick={handleAddAllToCart}
-                className="flex-1 sm:flex-initial py-3.5 px-8 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-2xl text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 transition-all flex items-center justify-center gap-2"
+                className="flex-1 sm:flex-initial py-3.5 px-8 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold rounded-2xl text-xs uppercase tracking-wider shadow-lg shadow-blue-500/25 transition-all flex items-center justify-center gap-2 border border-blue-400/30 active:scale-95"
               >
                 <ShoppingBag className="w-4 h-4" /> Add Full Regimen to Cart
               </button>

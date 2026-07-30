@@ -33,17 +33,17 @@ export const QuickViewModal = ({ product, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
-      <div className="relative w-full max-w-3xl bg-white dark:bg-[#16221F] rounded-3xl shadow-2xl overflow-hidden border border-rose-100 dark:border-white/10 max-h-[90vh] flex flex-col md:flex-row">
+      <div className="relative w-full max-w-3xl bg-white dark:bg-[#0C1733] rounded-3xl shadow-2xl overflow-hidden border border-blue-200/80 dark:border-blue-800/40 max-h-[90vh] flex flex-col md:flex-row">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 rounded-full bg-white/80 dark:bg-black/50 text-gray-500 dark:text-gray-300 hover:text-rose-500 hover:bg-white transition-all shadow-sm"
+          className="absolute top-4 right-4 z-20 p-2 rounded-full bg-white/80 dark:bg-black/50 text-gray-500 dark:text-gray-300 hover:text-blue-600 hover:bg-white transition-all shadow-sm"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Gallery Column */}
-        <div className="w-full md:w-1/2 p-6 bg-rose-50/50 dark:bg-[#0B1513]/50 flex flex-col items-center justify-center">
+        <div className="w-full md:w-1/2 p-6 bg-blue-50/50 dark:bg-[#070E20]/50 flex flex-col items-center justify-center">
           <div className="relative aspect-square w-full rounded-2xl overflow-hidden mb-4 shadow-inner">
             <img
               src={product.images[selectedImage]}
@@ -63,7 +63,7 @@ export const QuickViewModal = ({ product, onClose }) => {
                   onClick={() => setSelectedImage(idx)}
                   className={`w-14 h-14 rounded-xl overflow-hidden border-2 transition-all ${
                     selectedImage === idx
-                      ? 'border-rose-500 scale-105 shadow-md'
+                      ? 'border-blue-600 scale-105 shadow-md'
                       : 'border-transparent opacity-70 hover:opacity-100'
                   }`}
                 >
@@ -85,7 +85,7 @@ export const QuickViewModal = ({ product, onClose }) => {
         <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between overflow-y-auto">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-xs font-bold text-rose-500 uppercase tracking-widest">
+              <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest">
                 {product.brand}
               </span>
               <span className="text-gray-300">•</span>
@@ -98,7 +98,7 @@ export const QuickViewModal = ({ product, onClose }) => {
 
             <div className="flex items-center gap-3 mb-4">
               <RatingStars rating={product.rating} reviewCount={product.reviewCount} />
-              <span className="text-xs text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
+              <span className="text-xs text-cyan-600 dark:text-cyan-400 font-semibold flex items-center gap-1">
                 <Check className="w-3.5 h-3.5" /> In Stock ({product.stock})
               </span>
             </div>
@@ -122,7 +122,7 @@ export const QuickViewModal = ({ product, onClose }) => {
             {product.shades && (
               <div className="mb-4">
                 <span className="block text-xs font-semibold text-gray-700 dark:text-gray-200 mb-2">
-                  Select Shade: <span className="text-rose-500">{selectedShade?.name}</span>
+                  Select Shade: <span className="text-blue-600 dark:text-blue-400">{selectedShade?.name}</span>
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {product.shades.map((shade, idx) => (
@@ -131,7 +131,7 @@ export const QuickViewModal = ({ product, onClose }) => {
                       onClick={() => setSelectedShade(shade)}
                       style={{ backgroundColor: shade.hex }}
                       className={`w-7 h-7 rounded-full border-2 border-white dark:border-gray-800 shadow-md transition-all ${
-                        selectedShade?.name === shade.name ? 'ring-2 ring-rose-500 scale-110' : 'hover:scale-105'
+                        selectedShade?.name === shade.name ? 'ring-2 ring-blue-600 scale-110' : 'hover:scale-105'
                       }`}
                       title={shade.name}
                     />
@@ -141,12 +141,12 @@ export const QuickViewModal = ({ product, onClose }) => {
             )}
 
             {/* Badges */}
-            <div className="flex items-center gap-3 py-3 border-y border-rose-100 dark:border-white/10 mb-5 text-xs text-gray-500 dark:text-gray-400">
+            <div className="flex items-center gap-3 py-3 border-y border-blue-100 dark:border-blue-900/40 mb-5 text-xs text-gray-500 dark:text-gray-400">
               <span className="flex items-center gap-1">
-                <Leaf className="w-3.5 h-3.5 text-emerald-500" /> Vegan & Cruelty Free
+                <Leaf className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" /> Vegan & Cruelty Free
               </span>
               <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-rose-500" /> 100% Authentic
+                <ShieldCheck className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" /> 100% Authentic
               </span>
             </div>
           </div>
@@ -154,10 +154,10 @@ export const QuickViewModal = ({ product, onClose }) => {
           {/* Action Buttons */}
           <div className="flex items-center gap-3 pt-2">
             {/* Quantity Selector */}
-            <div className="flex items-center bg-gray-100 dark:bg-emeraldDark-800 rounded-xl p-1 border border-gray-200 dark:border-white/10">
+            <div className="flex items-center bg-gray-100 dark:bg-[#070E20] rounded-xl p-1 border border-gray-200 dark:border-blue-800/40">
               <button
                 onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                className="w-8 h-8 rounded-lg font-bold text-gray-700 dark:text-gray-200 hover:bg-white dark:hover:bg-[#16221F] transition-all"
+                className="w-8 h-8 rounded-lg font-bold text-gray-700 dark:text-gray-200 hover:bg-white dark:hover:bg-[#0C1733] transition-all"
               >
                 -
               </button>
@@ -166,7 +166,7 @@ export const QuickViewModal = ({ product, onClose }) => {
               </span>
               <button
                 onClick={() => setQuantity((q) => q + 1)}
-                className="w-8 h-8 rounded-lg font-bold text-gray-700 dark:text-gray-200 hover:bg-white dark:hover:bg-[#16221F] transition-all"
+                className="w-8 h-8 rounded-lg font-bold text-gray-700 dark:text-gray-200 hover:bg-white dark:hover:bg-[#0C1733] transition-all"
               >
                 +
               </button>
@@ -174,7 +174,7 @@ export const QuickViewModal = ({ product, onClose }) => {
 
             <button
               onClick={handleAddToCart}
-              className="flex-1 py-3 px-4 bg-rose-500 hover:bg-rose-600 text-white rounded-xl text-xs font-semibold shadow-lg shadow-rose-500/25 transition-all flex items-center justify-center gap-2"
+              className="flex-1 py-3 px-4 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold rounded-xl text-xs uppercase tracking-wider shadow-lg shadow-blue-500/25 transition-all flex items-center justify-center gap-2 border border-blue-400/30 active:scale-95"
             >
               <ShoppingBag className="w-4 h-4" /> Add to Cart
             </button>
@@ -183,8 +183,8 @@ export const QuickViewModal = ({ product, onClose }) => {
               onClick={() => toggleWishlist(product)}
               className={`p-3 rounded-xl border transition-all ${
                 isFavorite
-                  ? 'bg-rose-500 text-white border-rose-500'
-                  : 'border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-300 hover:text-rose-500'
+                  ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-blue-500'
+                  : 'border-blue-200 dark:border-blue-800/40 text-gray-500 dark:text-gray-300 hover:text-blue-600'
               }`}
             >
               <Heart className={`w-4 h-4 ${isFavorite ? 'fill-white' : ''}`} />
@@ -195,7 +195,7 @@ export const QuickViewModal = ({ product, onClose }) => {
             <Link
               to={`/product/${product.id}`}
               onClick={onClose}
-              className="text-xs text-rose-500 hover:underline font-semibold"
+              className="text-xs text-blue-600 dark:text-blue-400 hover:underline font-bold"
             >
               View Full Product Details & Customer Reviews →
             </Link>

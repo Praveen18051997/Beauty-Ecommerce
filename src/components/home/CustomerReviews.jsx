@@ -38,7 +38,7 @@ export const CustomerReviews = () => {
   return (
     <section className="py-20 px-4 lg:px-8 max-w-7xl mx-auto">
       <div className="text-center max-w-2xl mx-auto mb-14">
-        <span className="text-xs font-bold text-rose-500 uppercase tracking-widest flex items-center justify-center gap-1.5 mb-2">
+        <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest flex items-center justify-center gap-1.5 mb-2">
           <Sparkles className="w-4 h-4" /> Real Results & Verified Reviews
         </span>
         <h2 className="font-serif font-extrabold text-3xl sm:text-4xl text-gray-900 dark:text-white mb-3">
@@ -60,9 +60,9 @@ export const CustomerReviews = () => {
         {testimonials.map((t, i) => (
           <div
             key={i}
-            className="p-8 rounded-3xl bg-white dark:bg-[#16221F] border border-rose-100 dark:border-white/10 shadow-lg relative flex flex-col justify-between hover:-translate-y-1 transition-transform"
+            className="p-8 rounded-3xl bg-white dark:bg-[#0C1733] border border-blue-200/80 dark:border-blue-800/40 shadow-lg relative flex flex-col justify-between hover:-translate-y-1 transition-transform"
           >
-            <Quote className="w-10 h-10 text-rose-200 dark:text-rose-900/40 absolute top-6 right-6 pointer-events-none" />
+            <Quote className="w-10 h-10 text-blue-200 dark:text-blue-900/40 absolute top-6 right-6 pointer-events-none" />
 
             <div>
               <div className="flex items-center gap-1 text-amber-400 mb-3">
@@ -79,23 +79,23 @@ export const CustomerReviews = () => {
               </p>
             </div>
 
-            <div className="pt-4 border-t border-rose-100 dark:border-white/5 flex items-center justify-between">
+            <div className="pt-4 border-t border-blue-100 dark:border-blue-900/40 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <img
                   src={t.avatar}
                   alt={t.name}
-                  className="w-11 h-11 rounded-full object-cover border-2 border-rose-300"
+                  className="w-11 h-11 rounded-full object-cover border-2 border-blue-400"
                 />
                 <div>
                   <h5 className="font-bold text-xs text-gray-900 dark:text-white flex items-center gap-1">
                     {t.name}
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 fill-emerald-500 text-white" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-600 fill-cyan-600 text-white" />
                   </h5>
                   <span className="text-[10px] text-gray-400 block">{t.skinType}</span>
                 </div>
               </div>
 
-              <span className="text-[10px] font-semibold text-rose-500 bg-rose-50 dark:bg-rose-950/60 px-2 py-1 rounded-md">
+              <span className="text-[10px] font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-[#070E20] px-2 py-1 rounded-md border border-blue-200/60 dark:border-blue-800/40">
                 Verified Buyer
               </span>
             </div>

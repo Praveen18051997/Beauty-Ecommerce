@@ -107,7 +107,7 @@ export const ProductListingPage = () => {
     <div className="pt-28 pb-20 px-4 lg:px-8 max-w-7xl mx-auto">
       {/* Header Banner */}
       <div className="mb-10 text-center max-w-2xl mx-auto space-y-3">
-        <span className="text-xs font-bold text-rose-500 uppercase tracking-widest flex items-center justify-center gap-1.5">
+        <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest flex items-center justify-center gap-1.5">
           <Sparkles className="w-4 h-4" /> Botanical Luxury Boutique
         </span>
         <h1 className="font-serif font-extrabold text-4xl sm:text-5xl text-gray-900 dark:text-white capitalize">
@@ -127,8 +127,8 @@ export const ProductListingPage = () => {
           }}
           className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all shrink-0 ${
             selectedCategory === 'all'
-              ? 'bg-rose-500 text-white shadow-md'
-              : 'bg-white dark:bg-[#16221F] text-gray-700 dark:text-gray-300 border border-rose-100 dark:border-white/10 hover:border-rose-300'
+              ? 'bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 text-white shadow-md shadow-blue-500/25'
+              : 'bg-white dark:bg-[#0C1733] text-gray-700 dark:text-gray-300 border border-blue-200/80 dark:border-blue-800/40 hover:border-blue-400'
           }`}
         >
           All Categories ({products.length})
@@ -143,8 +143,8 @@ export const ProductListingPage = () => {
             }}
             className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all shrink-0 flex items-center gap-2 ${
               selectedCategory === cat.id
-                ? 'bg-rose-500 text-white shadow-md'
-                : 'bg-white dark:bg-[#16221F] text-gray-700 dark:text-gray-300 border border-rose-100 dark:border-white/10 hover:border-rose-300'
+                ? 'bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 text-white shadow-md shadow-blue-500/25'
+                : 'bg-white dark:bg-[#0C1733] text-gray-700 dark:text-gray-300 border border-blue-200/80 dark:border-blue-800/40 hover:border-blue-400'
             }`}
           >
             <span>{cat.name}</span>
@@ -155,14 +155,14 @@ export const ProductListingPage = () => {
       {/* Main Content Layout: Sidebar + Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Desktop Sidebar Filters */}
-        <aside className="hidden lg:block lg:col-span-3 space-y-6 bg-white dark:bg-[#16221F] p-6 rounded-3xl border border-rose-100 dark:border-white/10 shadow-sm h-fit">
-          <div className="flex items-center justify-between pb-4 border-b border-rose-100 dark:border-white/10">
+        <aside className="hidden lg:block lg:col-span-3 space-y-6 bg-white dark:bg-[#0C1733] p-6 rounded-3xl border border-blue-200/80 dark:border-blue-800/40 shadow-sm h-fit">
+          <div className="flex items-center justify-between pb-4 border-b border-blue-100 dark:border-blue-900/40">
             <h3 className="font-serif font-bold text-lg text-gray-900 dark:text-white flex items-center gap-2">
-              <SlidersHorizontal className="w-4 h-4 text-rose-500" /> Filters
+              <SlidersHorizontal className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Filters
             </h3>
             <button
               onClick={clearAllFilters}
-              className="text-xs text-rose-500 hover:underline font-semibold flex items-center gap-1"
+              className="text-xs text-blue-600 dark:text-blue-400 hover:underline font-semibold flex items-center gap-1"
             >
               <RefreshCw className="w-3 h-3" /> Reset
             </button>
@@ -179,7 +179,7 @@ export const ProductListingPage = () => {
                 placeholder="Name, ingredient, brand..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 bg-gray-50 dark:bg-[#0B1513] border border-gray-200 dark:border-white/10 rounded-xl text-xs outline-none focus:border-rose-500"
+                className="w-full pl-9 pr-3 py-2 bg-gray-50 dark:bg-[#070E20] border border-blue-200/80 dark:border-blue-800/40 rounded-xl text-xs outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
               />
               <Search className="w-4 h-4 text-gray-400 absolute left-3 top-2.5" />
             </div>
@@ -194,13 +194,13 @@ export const ProductListingPage = () => {
               {skinTypes.map((st) => (
                 <label
                   key={st}
-                  className="flex items-center gap-2.5 text-xs text-gray-600 dark:text-gray-300 cursor-pointer hover:text-rose-500"
+                  className="flex items-center gap-2.5 text-xs text-gray-600 dark:text-gray-300 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
                   <input
                     type="checkbox"
                     checked={selectedSkinTypes.includes(st)}
                     onChange={() => handleSkinTypeToggle(st)}
-                    className="w-4 h-4 rounded text-rose-500 focus:ring-rose-400 border-gray-300"
+                    className="w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-gray-300"
                   />
                   <span>{st}</span>
                 </label>
@@ -217,13 +217,13 @@ export const ProductListingPage = () => {
               {brands.map((b) => (
                 <label
                   key={b}
-                  className="flex items-center gap-2.5 text-xs text-gray-600 dark:text-gray-300 cursor-pointer hover:text-rose-500"
+                  className="flex items-center gap-2.5 text-xs text-gray-600 dark:text-gray-300 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
                   <input
                     type="checkbox"
                     checked={selectedBrands.includes(b)}
                     onChange={() => handleBrandToggle(b)}
-                    className="w-4 h-4 rounded text-rose-500 focus:ring-rose-400 border-gray-300"
+                    className="w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-gray-300"
                   />
                   <span>{b}</span>
                 </label>
@@ -235,7 +235,7 @@ export const ProductListingPage = () => {
           <div>
             <div className="flex items-center justify-between text-xs font-bold mb-2">
               <span className="text-gray-900 dark:text-white uppercase tracking-wider">Max Price</span>
-              <span className="text-rose-500">₹{priceMax}</span>
+              <span className="text-blue-600 dark:text-blue-400">₹{priceMax}</span>
             </div>
             <input
               type="range"
@@ -244,7 +244,7 @@ export const ProductListingPage = () => {
               step={100}
               value={priceMax}
               onChange={(e) => setPriceMax(Number(e.target.value))}
-              className="w-full accent-rose-500"
+              className="w-full accent-blue-600"
             />
           </div>
 
@@ -258,10 +258,10 @@ export const ProductListingPage = () => {
                 <button
                   key={r}
                   onClick={() => setMinRating(r)}
-                  className={`px-3 py-1 rounded-lg text-xs font-bold border ${
+                  className={`px-3 py-1 rounded-lg text-xs font-bold border transition-all ${
                     minRating === r
-                      ? 'bg-rose-500 text-white border-rose-500'
-                      : 'border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300'
+                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-blue-500 shadow-sm'
+                      : 'border-blue-200/80 dark:border-blue-800/40 text-gray-600 dark:text-gray-300 hover:border-blue-400'
                   }`}
                 >
                   {r === 0 ? 'All' : `${r}+ ★`}
@@ -274,17 +274,17 @@ export const ProductListingPage = () => {
         {/* Right Main Grid Section */}
         <main className="lg:col-span-9 space-y-6">
           {/* Top Bar Controls */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white dark:bg-[#16221F] p-4 rounded-2xl border border-rose-100 dark:border-white/10 shadow-sm">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white dark:bg-[#0C1733] p-4 rounded-2xl border border-blue-200/80 dark:border-blue-800/40 shadow-sm">
             {/* Mobile Filter Toggle */}
             <button
               onClick={() => setIsMobileFilterOpen(true)}
-              className="lg:hidden w-full sm:w-auto py-2 px-4 bg-rose-500 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2"
+              className="lg:hidden w-full sm:w-auto py-2 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-md shadow-blue-500/25"
             >
               <Filter className="w-4 h-4" /> Filter Options
             </button>
 
             <span className="text-xs font-semibold text-gray-600 dark:text-gray-300">
-              Showing <strong className="text-rose-500">{filteredProducts.length}</strong> beauty products
+              Showing <strong className="text-blue-600 dark:text-blue-400">{filteredProducts.length}</strong> beauty products
             </span>
 
             {/* Sorting & Layout Switcher */}
@@ -292,7 +292,7 @@ export const ProductListingPage = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="px-3 py-2 bg-gray-50 dark:bg-[#0B1513] border border-gray-200 dark:border-white/10 rounded-xl text-xs font-semibold text-gray-800 dark:text-gray-200 outline-none focus:border-rose-500"
+                className="px-3 py-2 bg-gray-50 dark:bg-[#070E20] border border-blue-200/80 dark:border-blue-800/40 rounded-xl text-xs font-semibold text-gray-800 dark:text-gray-200 outline-none focus:border-blue-500"
               >
                 <option value="featured">Sort by Featured</option>
                 <option value="price-low">Price: Low to High</option>
@@ -301,12 +301,12 @@ export const ProductListingPage = () => {
                 <option value="newest">New Arrivals</option>
               </select>
 
-              <div className="flex items-center bg-gray-100 dark:bg-emeraldDark-800 p-1 rounded-xl">
+              <div className="flex items-center bg-gray-100 dark:bg-[#070E20] p-1 rounded-xl border border-blue-200/60 dark:border-blue-800/40">
                 <button
                   onClick={() => setViewMode('grid')}
                   className={`p-1.5 rounded-lg transition-colors ${
                     viewMode === 'grid'
-                      ? 'bg-white dark:bg-[#16221F] text-rose-500 shadow-sm'
+                      ? 'bg-white dark:bg-[#0C1733] text-blue-600 dark:text-blue-400 shadow-sm font-bold'
                       : 'text-gray-400'
                   }`}
                 >
@@ -316,7 +316,7 @@ export const ProductListingPage = () => {
                   onClick={() => setViewMode('list')}
                   className={`p-1.5 rounded-lg transition-colors ${
                     viewMode === 'list'
-                      ? 'bg-white dark:bg-[#16221F] text-rose-500 shadow-sm'
+                      ? 'bg-white dark:bg-[#0C1733] text-blue-600 dark:text-blue-400 shadow-sm font-bold'
                       : 'text-gray-400'
                   }`}
                 >
@@ -334,7 +334,7 @@ export const ProductListingPage = () => {
                 <span
                   key={st}
                   onClick={() => handleSkinTypeToggle(st)}
-                  className="px-2.5 py-1 bg-rose-100 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 rounded-full text-xs font-bold flex items-center gap-1 cursor-pointer hover:bg-rose-200"
+                  className="px-2.5 py-1 bg-blue-100 dark:bg-[#070E20] text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold flex items-center gap-1 cursor-pointer hover:bg-blue-200 border border-blue-200/60 dark:border-blue-800/40"
                 >
                   {st} <X className="w-3 h-3" />
                 </span>
@@ -343,7 +343,7 @@ export const ProductListingPage = () => {
                 <span
                   key={b}
                   onClick={() => handleBrandToggle(b)}
-                  className="px-2.5 py-1 bg-champagne-100 dark:bg-champagne-950/60 text-champagne-800 dark:text-champagne-200 rounded-full text-xs font-bold flex items-center gap-1 cursor-pointer hover:bg-champagne-200"
+                  className="px-2.5 py-1 bg-cyan-100 dark:bg-[#070E20] text-cyan-800 dark:text-cyan-300 rounded-full text-xs font-bold flex items-center gap-1 cursor-pointer hover:bg-cyan-200 border border-cyan-200/60 dark:border-cyan-800/40"
                 >
                   {b} <X className="w-3 h-3" />
                 </span>
@@ -353,7 +353,7 @@ export const ProductListingPage = () => {
 
           {/* Products View */}
           {filteredProducts.length === 0 ? (
-            <div className="text-center py-20 bg-white dark:bg-[#16221F] rounded-3xl border border-rose-100 dark:border-white/10 p-8">
+            <div className="text-center py-20 bg-white dark:bg-[#0C1733] rounded-3xl border border-blue-200/80 dark:border-blue-800/40 p-8 shadow-sm">
               <h3 className="font-serif font-bold text-xl text-gray-900 dark:text-white mb-2">
                 No products match your filter criteria
               </h3>
@@ -362,7 +362,7 @@ export const ProductListingPage = () => {
               </p>
               <button
                 onClick={clearAllFilters}
-                className="py-3 px-6 bg-rose-500 text-white font-semibold rounded-2xl text-xs"
+                className="py-3 px-6 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold rounded-2xl text-xs uppercase tracking-wider shadow-md shadow-blue-500/25 transition-all border border-blue-400/30"
               >
                 Clear All Filters
               </button>
@@ -390,7 +390,7 @@ export const ProductListingPage = () => {
             <div className="text-center pt-8">
               <button
                 onClick={() => setVisibleCount((prev) => prev + 6)}
-                className="py-3.5 px-8 bg-white dark:bg-[#16221F] hover:bg-rose-500 hover:text-white text-gray-900 dark:text-white font-bold rounded-2xl text-xs uppercase tracking-wider border border-rose-200 dark:border-white/10 shadow-md transition-all"
+                className="py-3.5 px-8 bg-white dark:bg-[#0C1733] hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white text-gray-900 dark:text-white font-extrabold rounded-2xl text-xs uppercase tracking-wider border-2 border-blue-300 dark:border-blue-700/60 shadow-md transition-all"
               >
                 Load More Products ({filteredProducts.length - visibleCount} Remaining)
               </button>

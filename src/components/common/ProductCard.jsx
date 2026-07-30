@@ -22,21 +22,21 @@ export const ProductCard = ({ product, onQuickView }) => {
     : null;
 
   return (
-    <div className="group relative bg-white dark:bg-[#16221F] rounded-3xl p-3 border border-rose-100 dark:border-white/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+    <div className="group relative bg-white dark:bg-[#0C1733] rounded-3xl p-3 border border-blue-200/80 dark:border-blue-800/40 hover:border-blue-400 dark:hover:border-blue-600 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
       {/* Badges */}
       <div className="absolute top-5 left-5 z-10 flex flex-col gap-1.5 pointer-events-none">
         {discountPercent && (
-          <span className="bg-rose-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+          <span className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
             -{discountPercent}% OFF
           </span>
         )}
         {product.isBestSeller && (
-          <span className="bg-amber-400 text-amber-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm flex items-center gap-1">
+          <span className="bg-cyan-400 text-cyan-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm flex items-center gap-1">
             <Sparkles className="w-3 h-3" /> Best Seller
           </span>
         )}
         {product.isNewArrival && !product.isBestSeller && (
-          <span className="bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
+          <span className="bg-blue-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
             New
           </span>
         )}
@@ -48,8 +48,8 @@ export const ProductCard = ({ product, onQuickView }) => {
           onClick={() => toggleWishlist(product)}
           className={`p-2.5 rounded-full backdrop-blur-md transition-all shadow-md ${
             isFavorite
-              ? 'bg-rose-500 text-white hover:bg-rose-600 scale-105'
-              : 'bg-white/80 dark:bg-[#0B1513]/80 text-gray-600 dark:text-gray-300 hover:text-rose-500 hover:bg-white'
+              ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white scale-105'
+              : 'bg-white/80 dark:bg-[#070E20]/80 text-gray-600 dark:text-gray-300 hover:text-blue-500 hover:bg-white'
           }`}
           title={isFavorite ? 'Remove from Wishlist' : 'Add to Wishlist'}
         >
@@ -60,8 +60,8 @@ export const ProductCard = ({ product, onQuickView }) => {
           onClick={() => toggleCompare(product)}
           className={`p-2.5 rounded-full backdrop-blur-md transition-all shadow-md ${
             isCompared
-              ? 'bg-champagne-500 text-white scale-105'
-              : 'bg-white/80 dark:bg-[#0B1513]/80 text-gray-600 dark:text-gray-300 hover:text-champagne-500 hover:bg-white'
+              ? 'bg-cyan-600 text-white scale-105'
+              : 'bg-white/80 dark:bg-[#070E20]/80 text-gray-600 dark:text-gray-300 hover:text-cyan-500 hover:bg-white'
           }`}
           title={isCompared ? 'Remove from Compare' : 'Add to Compare'}
         >
@@ -70,7 +70,7 @@ export const ProductCard = ({ product, onQuickView }) => {
       </div>
 
       {/* Product Image Container */}
-      <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-rose-50/50 dark:bg-emeraldDark-800/50 mb-3 group/img">
+      <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-blue-50/50 dark:bg-[#070E20]/50 mb-3 group/img">
         <Link to={`/product/${product.id}`} className="block w-full h-full">
           <img
             src={product.images[0]}
@@ -87,7 +87,7 @@ export const ProductCard = ({ product, onQuickView }) => {
         <div className="absolute inset-x-0 bottom-3 px-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-2">
           <button
             onClick={() => onQuickView && onQuickView(product)}
-            className="w-full py-2.5 px-3 bg-white/90 dark:bg-[#12201D]/90 backdrop-blur-md text-gray-800 dark:text-gray-100 text-xs font-semibold rounded-xl shadow-lg hover:bg-rose-500 hover:text-white transition-all flex items-center justify-center gap-1.5"
+            className="w-full py-2.5 px-3 bg-white/90 dark:bg-[#070E20]/90 backdrop-blur-md text-gray-800 dark:text-gray-100 text-xs font-semibold rounded-xl shadow-lg hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white transition-all flex items-center justify-center gap-1.5"
           >
             <Eye className="w-3.5 h-3.5" /> Quick View
           </button>
@@ -98,7 +98,7 @@ export const ProductCard = ({ product, onQuickView }) => {
       <div className="flex-1 flex flex-col justify-between">
         <div>
           {/* Brand & Category */}
-          <div className="flex items-center justify-between text-xs text-rose-500 dark:text-rose-400 font-semibold mb-1 uppercase tracking-wider">
+          <div className="flex items-center justify-between text-xs text-blue-600 dark:text-blue-400 font-semibold mb-1 uppercase tracking-wider">
             <span>{product.brand}</span>
             <span className="text-gray-400 font-normal capitalize">{product.category}</span>
           </div>
@@ -106,7 +106,7 @@ export const ProductCard = ({ product, onQuickView }) => {
           {/* Product Title */}
           <Link
             to={`/product/${product.id}`}
-            className="block font-serif font-semibold text-gray-900 dark:text-white text-base leading-snug line-clamp-1 hover:text-rose-500 dark:hover:text-rose-400 transition-colors mb-1.5"
+            className="block font-serif font-semibold text-gray-900 dark:text-white text-base leading-snug line-clamp-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors mb-1.5"
           >
             {product.name}
           </Link>
@@ -130,7 +130,7 @@ export const ProductCard = ({ product, onQuickView }) => {
                     }}
                     style={{ backgroundColor: shade.hex }}
                     className={`w-3.5 h-3.5 rounded-full border border-white dark:border-gray-700 shadow-sm transition-transform ${
-                      selectedShade?.name === shade.name ? 'scale-125 ring-2 ring-rose-400' : 'hover:scale-110'
+                      selectedShade?.name === shade.name ? 'scale-125 ring-2 ring-blue-500' : 'hover:scale-110'
                     }`}
                     title={shade.name}
                   />
@@ -146,7 +146,7 @@ export const ProductCard = ({ product, onQuickView }) => {
         </div>
 
         {/* Footer: Pricing & Add to Cart */}
-        <div className="pt-3 border-t border-rose-50 dark:border-white/5 flex items-center justify-between gap-2 mt-2">
+        <div className="pt-3 border-t border-blue-100 dark:border-blue-900/40 flex items-center justify-between gap-2 mt-2">
           <div>
             <div className="flex items-baseline gap-1.5">
               <span className="text-lg font-bold text-gray-900 dark:text-white">
@@ -162,7 +162,7 @@ export const ProductCard = ({ product, onQuickView }) => {
 
           <button
             onClick={() => addToCart(product, 1, selectedShade)}
-            className="py-2 px-3 bg-[#12201D] dark:bg-rose-500 text-white hover:bg-rose-600 dark:hover:bg-rose-600 rounded-xl text-xs font-semibold transition-all duration-300 flex items-center gap-1.5 shadow-md active:scale-95 shrink-0"
+            className="py-2 px-3.5 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white rounded-xl text-xs font-semibold transition-all duration-300 flex items-center gap-1.5 shadow-md shadow-blue-500/25 active:scale-95 shrink-0"
           >
             <ShoppingBag className="w-3.5 h-3.5" />
             <span>Add</span>

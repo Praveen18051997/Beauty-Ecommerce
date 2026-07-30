@@ -4,7 +4,7 @@ import { useToast } from './ToastContext';
 const CartContext = createContext();
 
 const VALID_COUPONS = {
-  GLOW20: { discountPercent: 20, description: '20% Off Your Entire Order' },
+  PR30: { discountPercent: 30, description: '30% Off Your Entire Order' },
   BEAUTY15: { discountPercent: 15, description: '15% Off Beauty Favorites' },
   FREESHIP: { discountPercent: 0, freeShipping: true, description: 'Free Standard Express Shipping' },
 };
@@ -91,7 +91,7 @@ export const CartProvider = ({ children }) => {
       addToast(`Coupon "${formatted}" applied successfully!`, 'success', 'Promo Applied');
       return { success: true, message: 'Coupon applied!' };
     } else {
-      addToast('Invalid coupon code. Try "GLOW20" or "BEAUTY15"', 'error', 'Invalid Code');
+      addToast('Invalid coupon code. Try "PR30" or "BEAUTY15"', 'error', 'Invalid Code');
       return { success: false, message: 'Invalid coupon code.' };
     }
   };

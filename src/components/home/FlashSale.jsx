@@ -12,13 +12,13 @@ export const FlashSale = () => {
   const saleProducts = products.filter((p) => p.isFlashSale || p.originalPrice);
 
   return (
-    <section className="py-16 px-4 lg:px-8 bg-rose-50/60 dark:bg-emeraldDark-900/60 border-y border-rose-100 dark:border-white/5">
+    <section className="py-16 px-4 lg:px-8 bg-blue-50/60 dark:bg-[#070E20]/60 border-y border-blue-100 dark:border-blue-900/40">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-10 gap-6">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500 text-white text-xs font-bold uppercase tracking-wider shadow-sm">
-              <Flame className="w-4 h-4 fill-white animate-bounce" />
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 text-white text-xs font-extrabold uppercase tracking-wider shadow-sm border border-blue-400/30">
+              <Flame className="w-4 h-4 fill-white animate-bounce text-cyan-300" />
               <span>Limited Time Beauty Offer</span>
             </div>
             <h2 className="font-serif font-extrabold text-3xl lg:text-4xl text-gray-900 dark:text-white pt-1">
@@ -30,7 +30,7 @@ export const FlashSale = () => {
           </div>
 
           {/* Live Countdown Timer */}
-          <div className="flex items-center gap-4 bg-white dark:bg-[#16221F] p-3 rounded-2xl border border-rose-200 dark:border-white/10 shadow-sm shrink-0">
+          <div className="flex items-center gap-4 bg-white dark:bg-[#0C1733] p-3 rounded-2xl border border-blue-200/80 dark:border-blue-800/40 shadow-sm shrink-0">
             <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">
               Ends In:
             </span>
@@ -52,7 +52,7 @@ export const FlashSale = () => {
         <div className="text-center mt-10">
           <Link
             to="/shop"
-            className="inline-flex items-center gap-2 py-3.5 px-8 bg-white dark:bg-[#16221F] hover:bg-rose-500 hover:text-white text-gray-900 dark:text-white font-bold rounded-2xl text-xs uppercase tracking-wider border border-rose-200 dark:border-white/10 shadow-md transition-all group"
+            className="inline-flex items-center gap-2 py-3.5 px-8 bg-white dark:bg-[#0C1733] hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white text-gray-900 dark:text-white font-extrabold rounded-2xl text-xs uppercase tracking-wider border-2 border-blue-300 dark:border-blue-700/60 shadow-md transition-all group"
           >
             <span>View All Sale Deals</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

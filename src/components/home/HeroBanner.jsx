@@ -45,16 +45,16 @@ export const HeroBanner = () => {
   const slide = heroSlides[currentSlide];
 
   return (
-    <section className="relative min-h-[85vh] lg:min-h-[90vh] pt-28 pb-16 flex items-center justify-center overflow-hidden bg-[#FAF7F5] dark:bg-[#0B1513]">
+    <section className="relative min-h-[85vh] lg:min-h-[90vh] pt-28 pb-16 flex items-center justify-center overflow-hidden bg-[#F8FAFC] dark:bg-[#050A18]">
       {/* Background Glow Orbs */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-rose-200/40 dark:bg-rose-900/20 rounded-full blur-3xl pointer-events-none animate-pulse-subtle" />
-      <div className="absolute bottom-10 right-10 w-[30rem] h-[30rem] bg-champagne-200/40 dark:bg-champagne-900/20 rounded-full blur-3xl pointer-events-none animate-pulse-subtle" />
+      <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400/20 dark:bg-blue-900/20 rounded-full blur-3xl pointer-events-none animate-pulse-subtle" />
+      <div className="absolute bottom-10 right-10 w-[30rem] h-[30rem] bg-cyan-400/20 dark:bg-cyan-900/20 rounded-full blur-3xl pointer-events-none animate-pulse-subtle" />
 
       <div className="max-w-7xl mx-auto px-4 lg:px-8 w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Text Content */}
         <div className="lg:col-span-6 space-y-6 animate-slide-up">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100/80 dark:bg-rose-950/80 border border-rose-200 dark:border-rose-900/50 text-rose-700 dark:text-rose-300 text-xs font-bold uppercase tracking-widest shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 fill-rose-500 text-rose-500" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/90 dark:bg-[#070E20] border border-blue-200 dark:border-blue-800/60 text-blue-700 dark:text-blue-300 text-xs font-extrabold uppercase tracking-widest shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 fill-blue-600 text-blue-600 dark:fill-blue-400 dark:text-blue-400" />
             <span>{slide.tag}</span>
           </div>
 
@@ -69,7 +69,7 @@ export const HeroBanner = () => {
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <Link
               to={slide.link}
-              className="py-4 px-8 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-2xl text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-rose-500/25 transition-all hover:scale-105 flex items-center gap-2 active:scale-95"
+              className="py-4 px-8 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold rounded-2xl text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-blue-500/25 transition-all hover:scale-105 flex items-center gap-2 active:scale-95 border border-blue-400/30"
             >
               <span>{slide.buttonText}</span>
               <ArrowRight className="w-4 h-4" />
@@ -77,21 +77,21 @@ export const HeroBanner = () => {
 
             <Link
               to="/quiz"
-              className="py-4 px-8 bg-white/80 dark:bg-[#16221F]/80 hover:bg-white text-gray-900 dark:text-white font-bold rounded-2xl text-xs sm:text-sm uppercase tracking-wider border border-rose-200 dark:border-white/10 shadow-md transition-all hover:scale-105 flex items-center gap-2"
+              className="py-4 px-8 bg-white/90 dark:bg-[#0C1733]/90 hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white text-gray-900 dark:text-white font-extrabold rounded-2xl text-xs sm:text-sm uppercase tracking-wider border-2 border-blue-300 dark:border-blue-700/60 shadow-md transition-all hover:scale-105 flex items-center gap-2"
             >
-              <Sparkles className="w-4 h-4 text-champagne-500" />
+              <Sparkles className="w-4 h-4 text-cyan-500" />
               <span>Take Beauty Quiz</span>
             </Link>
           </div>
 
           {/* Social Proof Badge */}
-          <div className="pt-6 border-t border-rose-100 dark:border-white/10 flex items-center gap-6 text-xs text-gray-500 dark:text-gray-400">
+          <div className="pt-6 border-t border-blue-100 dark:border-blue-900/40 flex items-center gap-6 text-xs text-gray-500 dark:text-gray-400">
             <div className="flex items-center gap-2 font-semibold">
-              <ShieldCheck className="w-4 h-4 text-emerald-500" />
+              <ShieldCheck className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
               <span>Dermatologist Tested</span>
             </div>
             <div className="flex items-center gap-2 font-semibold">
-              <Heart className="w-4 h-4 text-rose-500 fill-rose-500" />
+              <Heart className="w-4 h-4 text-blue-600 fill-blue-600 dark:text-blue-400 dark:fill-blue-400" />
               <span>100% Cruelty-Free</span>
             </div>
           </div>
@@ -113,14 +113,14 @@ export const HeroBanner = () => {
             {/* Floating Glass Badge */}
             <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl glass-panel shadow-lg flex items-center justify-between">
               <div>
-                <span className="text-[10px] font-bold text-rose-500 uppercase tracking-widest block">
+                <span className="text-[10px] font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-widest block">
                   FEATURED LUXURY ESSENTIAL
                 </span>
                 <h4 className="font-serif font-bold text-base text-gray-900 dark:text-white">
                   {slide.title}
                 </h4>
               </div>
-              <span className="px-3 py-1 bg-amber-400 text-amber-950 font-extrabold text-xs rounded-full shadow-sm shrink-0">
+              <span className="px-3 py-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold text-xs rounded-full shadow-sm shrink-0 border border-blue-400/30">
                 {slide.badge}
               </span>
             </div>
@@ -134,8 +134,8 @@ export const HeroBanner = () => {
                 onClick={() => setCurrentSlide(idx)}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   currentSlide === idx
-                    ? 'w-8 bg-rose-500'
-                    : 'w-2 bg-gray-300 dark:bg-gray-700 hover:bg-rose-300'
+                    ? 'w-8 bg-blue-600 dark:bg-blue-400'
+                    : 'w-2 bg-gray-300 dark:bg-gray-700 hover:bg-blue-300'
                 }`}
               />
             ))}

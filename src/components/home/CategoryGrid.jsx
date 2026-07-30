@@ -9,7 +9,7 @@ export const CategoryGrid = () => {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
         <div>
-          <span className="text-xs font-bold text-rose-500 uppercase tracking-widest flex items-center gap-1.5 mb-2">
+          <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest flex items-center gap-1.5 mb-2">
             <Sparkles className="w-4 h-4" /> Curated Collections
           </span>
           <h2 className="font-serif font-extrabold text-3xl md:text-4xl text-gray-900 dark:text-white">
@@ -18,7 +18,7 @@ export const CategoryGrid = () => {
         </div>
         <Link
           to="/shop"
-          className="mt-3 md:mt-0 text-xs font-bold text-rose-500 hover:text-rose-600 uppercase tracking-wider flex items-center gap-1 group"
+          className="mt-3 md:mt-0 text-xs font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 uppercase tracking-wider flex items-center gap-1 group"
         >
           <span>View All Categories</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -31,7 +31,7 @@ export const CategoryGrid = () => {
           <Link
             key={cat.id}
             to={`/shop?category=${cat.id}`}
-            className="group relative h-80 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl border border-rose-100 dark:border-white/10 transition-all duration-500"
+            className="group relative h-80 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl border border-blue-200/80 dark:border-blue-800/40 transition-all duration-500"
           >
             <img
               src={cat.image}
@@ -52,10 +52,10 @@ export const CategoryGrid = () => {
               </div>
 
               <div>
-                <span className="text-[11px] font-semibold text-rose-300 uppercase tracking-widest block mb-1">
+                <span className="text-[11px] font-semibold text-cyan-300 uppercase tracking-widest block mb-1">
                   {cat.tagline}
                 </span>
-                <h3 className="font-serif font-bold text-2xl text-white mb-2 group-hover:text-rose-200 transition-colors">
+                <h3 className="font-serif font-bold text-2xl text-white mb-2 group-hover:text-blue-200 transition-colors">
                   {cat.name}
                 </h3>
                 <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white group-hover:translate-x-2 transition-transform">

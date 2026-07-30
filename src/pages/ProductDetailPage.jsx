@@ -73,11 +73,11 @@ export const ProductDetailPage = () => {
     <div className="pt-28 pb-20 px-4 lg:px-8 max-w-7xl mx-auto space-y-12">
       {/* Breadcrumb Navigation */}
       <nav className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-        <Link to="/" className="hover:text-rose-500">Home</Link>
+        <Link to="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</Link>
         <span>/</span>
-        <Link to="/shop" className="hover:text-rose-500">Shop</Link>
+        <Link to="/shop" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Shop</Link>
         <span>/</span>
-        <Link to={`/shop?category=${product.category}`} className="capitalize hover:text-rose-500">
+        <Link to={`/shop?category=${product.category}`} className="capitalize hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
           {product.category}
         </Link>
         <span>/</span>
@@ -95,10 +95,10 @@ export const ProductDetailPage = () => {
         <div className="lg:col-span-6 space-y-6">
           <div>
             <div className="flex items-center justify-between gap-4 mb-2">
-              <span className="text-xs font-bold text-rose-500 uppercase tracking-widest">
+              <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest">
                 {product.brand}
               </span>
-              <span className="px-3 py-1 bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-[11px] font-bold rounded-full flex items-center gap-1">
+              <span className="px-3 py-1 bg-cyan-100 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 text-[11px] font-bold rounded-full flex items-center gap-1">
                 <Check className="w-3.5 h-3.5" /> In Stock ({product.stock} units)
               </span>
             </div>
@@ -110,13 +110,13 @@ export const ProductDetailPage = () => {
             {/* Ratings Summary */}
             <div className="flex items-center gap-4 mb-4">
               <RatingStars rating={product.rating} reviewCount={reviewsList.length} size="md" />
-              <a href="#reviews" className="text-xs text-rose-500 hover:underline font-semibold">
+              <a href="#reviews" className="text-xs text-blue-600 dark:text-blue-400 hover:underline font-semibold">
                 Read Reviews ({reviewsList.length})
               </a>
             </div>
 
             {/* Price & Discounts */}
-            <div className="flex items-baseline gap-3 py-3 border-y border-rose-100 dark:border-white/10">
+            <div className="flex items-baseline gap-3 py-3 border-y border-blue-100 dark:border-blue-900/40">
               <span className="font-bold text-3xl text-gray-900 dark:text-white">
                 ₹{product.price.toFixed(2)}
               </span>
@@ -125,7 +125,7 @@ export const ProductDetailPage = () => {
                   <span className="text-base text-gray-400 line-through">
                     ₹{product.originalPrice.toFixed(2)}
                   </span>
-                  <span className="px-2.5 py-0.5 bg-rose-500 text-white text-xs font-bold rounded-full">
+                  <span className="px-2.5 py-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold rounded-full shadow-sm">
                     SAVE ₹{(product.originalPrice - product.price).toFixed(2)}
                   </span>
                 </>
@@ -171,7 +171,7 @@ export const ProductDetailPage = () => {
               {/* Add to Cart */}
               <button
                 onClick={() => addToCart(product, quantity, selectedShade)}
-                className="flex-1 py-4 px-6 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-2xl text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 transition-all flex items-center justify-center gap-2 active:scale-95"
+                className="flex-1 py-4 px-6 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold rounded-2xl text-xs uppercase tracking-wider shadow-lg shadow-blue-500/25 transition-all flex items-center justify-center gap-2 active:scale-95 border border-blue-400/30"
               >
                 <ShoppingBag className="w-4 h-4" /> Add to Cart
               </button>
@@ -181,8 +181,8 @@ export const ProductDetailPage = () => {
                 onClick={() => toggleWishlist(product)}
                 className={`p-4 rounded-2xl border transition-all ${
                   isFavorite
-                    ? 'bg-rose-500 text-white border-rose-500'
-                    : 'border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300 hover:text-rose-500 hover:border-rose-300'
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-blue-500'
+                    : 'border-blue-200 dark:border-blue-800/40 text-gray-600 dark:text-gray-300 hover:text-blue-600 hover:border-blue-400'
                 }`}
                 title={isFavorite ? 'Remove from Wishlist' : 'Add to Wishlist'}
               >
@@ -194,8 +194,8 @@ export const ProductDetailPage = () => {
                 onClick={() => toggleCompare(product)}
                 className={`p-4 rounded-2xl border transition-all ${
                   isCompared
-                    ? 'bg-champagne-500 text-white border-champagne-500'
-                    : 'border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300 hover:text-champagne-500 hover:border-champagne-300'
+                    ? 'bg-cyan-600 text-white border-cyan-500'
+                    : 'border-blue-200 dark:border-blue-800/40 text-gray-600 dark:text-gray-300 hover:text-cyan-600 hover:border-cyan-400'
                 }`}
                 title="Compare Product Specs"
               >
@@ -206,28 +206,28 @@ export const ProductDetailPage = () => {
             {/* Buy Now Button */}
             <button
               onClick={handleBuyNow}
-              className="w-full py-4 bg-gray-900 hover:bg-black dark:bg-white dark:hover:bg-rose-100 dark:text-gray-900 text-white font-extrabold rounded-2xl text-xs uppercase tracking-wider shadow-md transition-all text-center"
+              className="w-full py-4 bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 hover:from-cyan-700 hover:to-indigo-700 text-white font-extrabold rounded-2xl text-xs uppercase tracking-wider shadow-lg shadow-blue-500/25 transition-all text-center border border-cyan-400/30"
             >
               Buy Now (Express Checkout)
             </button>
           </div>
 
           {/* Guarantees Box */}
-          <div className="grid grid-cols-2 gap-3 p-4 bg-rose-50/50 dark:bg-emeraldDark-900/50 rounded-2xl border border-rose-100 dark:border-white/5 text-xs text-gray-600 dark:text-gray-400">
+          <div className="grid grid-cols-2 gap-3 p-4 bg-blue-50/50 dark:bg-[#070E20]/50 rounded-2xl border border-blue-100 dark:border-blue-900/40 text-xs text-gray-600 dark:text-gray-400">
             <div className="flex items-center gap-2">
-              <Truck className="w-4 h-4 text-rose-500" />
+              <Truck className="w-4 h-4 text-blue-600 dark:text-blue-400" />
               <span>Free Shipping over ₹1,999</span>
             </div>
             <div className="flex items-center gap-2">
-              <RefreshCw className="w-4 h-4 text-rose-500" />
+              <RefreshCw className="w-4 h-4 text-blue-600 dark:text-blue-400" />
               <span>30-Day Easy Return</span>
             </div>
             <div className="flex items-center gap-2">
-              <Leaf className="w-4 h-4 text-emerald-500" />
+              <Leaf className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
               <span>100% Vegan & Cruelty Free</span>
             </div>
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-rose-500" />
+              <ShieldCheck className="w-4 h-4 text-blue-600 dark:text-blue-400" />
               <span>Dermatologist Approved</span>
             </div>
           </div>
@@ -235,15 +235,15 @@ export const ProductDetailPage = () => {
       </div>
 
       {/* Tabs Section: Details, Ingredients, How to Use */}
-      <div className="bg-white dark:bg-[#16221F] rounded-3xl p-6 lg:p-8 border border-rose-100 dark:border-white/10 shadow-sm">
-        <div className="flex items-center gap-6 border-b border-rose-100 dark:border-white/10 pb-4 mb-6 overflow-x-auto">
+      <div className="bg-white dark:bg-[#0C1733] rounded-3xl p-6 lg:p-8 border border-blue-200/80 dark:border-blue-800/40 shadow-sm">
+        <div className="flex items-center gap-6 border-b border-blue-100 dark:border-blue-900/40 pb-4 mb-6 overflow-x-auto">
           {['description', 'ingredients', 'howToUse'].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`text-xs sm:text-sm font-bold uppercase tracking-wider pb-2 border-b-2 transition-all ${
                 activeTab === tab
-                  ? 'border-rose-500 text-rose-500'
+                  ? 'border-blue-600 text-blue-600 dark:text-blue-400 font-extrabold'
                   : 'border-transparent text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
               }`}
             >
@@ -260,13 +260,13 @@ export const ProductDetailPage = () => {
             <div className="space-y-4">
               <p>{product.description}</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-4 bg-rose-50/50 dark:bg-emeraldDark-900/50 rounded-2xl">
+                <div className="p-4 bg-blue-50/50 dark:bg-[#070E20]/50 rounded-2xl border border-blue-100 dark:border-blue-900/40">
                   <h5 className="font-bold text-gray-900 dark:text-white mb-1">Suitable Skin Types</h5>
-                  <p className="text-xs text-rose-500 font-semibold">{product.skinType?.join(', ')}</p>
+                  <p className="text-xs text-blue-600 dark:text-blue-400 font-semibold">{product.skinType?.join(', ')}</p>
                 </div>
-                <div className="p-4 bg-rose-50/50 dark:bg-emeraldDark-900/50 rounded-2xl">
+                <div className="p-4 bg-blue-50/50 dark:bg-[#070E20]/50 rounded-2xl border border-blue-100 dark:border-blue-900/40">
                   <h5 className="font-bold text-gray-900 dark:text-white mb-1">Volume & Size</h5>
-                  <p className="text-xs text-rose-500 font-semibold">{product.volume}</p>
+                  <p className="text-xs text-blue-600 dark:text-blue-400 font-semibold">{product.volume}</p>
                 </div>
               </div>
             </div>
@@ -274,7 +274,7 @@ export const ProductDetailPage = () => {
 
           {activeTab === 'ingredients' && (
             <div className="space-y-3">
-              <p className="font-mono text-xs bg-gray-50 dark:bg-[#0B1513] p-4 rounded-2xl border border-gray-200 dark:border-white/10 leading-loose">
+              <p className="font-mono text-xs bg-gray-50 dark:bg-[#070E20] p-4 rounded-2xl border border-blue-100 dark:border-blue-900/40 leading-loose">
                 {product.ingredients}
               </p>
               <p className="text-xs text-gray-400">
@@ -285,7 +285,7 @@ export const ProductDetailPage = () => {
 
           {activeTab === 'howToUse' && (
             <div className="space-y-3">
-              <p className="p-4 bg-rose-50/50 dark:bg-emeraldDark-900/50 rounded-2xl border border-rose-100 dark:border-white/5">
+              <p className="p-4 bg-blue-50/50 dark:bg-[#070E20]/50 rounded-2xl border border-blue-100 dark:border-blue-900/40">
                 {product.howToUse}
               </p>
             </div>
@@ -310,7 +310,7 @@ export const ProductDetailPage = () => {
 
           <button
             onClick={() => setIsWriteReviewOpen(true)}
-            className="py-3 px-6 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-2xl text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2 self-start sm:self-auto"
+            className="py-3 px-6 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold rounded-2xl text-xs uppercase tracking-wider shadow-md shadow-blue-500/25 transition-all flex items-center justify-center gap-2 self-start sm:self-auto border border-blue-400/30 active:scale-95"
           >
             <MessageSquare className="w-4 h-4" /> Write a Review
           </button>
@@ -321,7 +321,7 @@ export const ProductDetailPage = () => {
           {reviewsList.map((rev) => (
             <div
               key={rev.id}
-              className="p-6 bg-white dark:bg-[#16221F] rounded-3xl border border-rose-100 dark:border-white/10 shadow-sm space-y-2"
+              className="p-6 bg-white dark:bg-[#0C1733] rounded-3xl border border-blue-200/80 dark:border-blue-800/40 shadow-sm space-y-2"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1 text-amber-400">
@@ -337,7 +337,7 @@ export const ProductDetailPage = () => {
               <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
                 {rev.comment}
               </p>
-              <div className="pt-2 text-[11px] text-rose-500 font-semibold">
+              <div className="pt-2 text-[11px] text-blue-600 dark:text-blue-400 font-semibold">
                 — {rev.author} (Verified Purchase)
               </div>
             </div>
@@ -347,7 +347,7 @@ export const ProductDetailPage = () => {
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (
-        <section className="pt-10 border-t border-rose-100 dark:border-white/10">
+        <section className="pt-10 border-t border-blue-100 dark:border-blue-900/40">
           <h3 className="font-serif font-bold text-2xl text-gray-900 dark:text-white mb-6">
             You Might Also Love
           </h3>

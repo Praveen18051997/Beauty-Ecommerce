@@ -25,7 +25,7 @@ const DEFAULT_USERS = [
     firstName: 'Sophia',
     lastName: 'Varghese',
     name: 'Sophia Varghese',
-    email: 'demo@prbeautycare.com',
+    email: 'demo@prbeauty.com',
     password: 'password123',
     phone: '+91 9123456789',
     address: '456 Rose Garden Way',

@@ -23,9 +23,9 @@ export const FrequentlyBoughtTogether = ({ currentProduct }) => {
   };
 
   return (
-    <div className="p-6 rounded-3xl bg-rose-50/70 dark:bg-emeraldDark-900/60 border border-rose-100 dark:border-white/10 my-10">
+    <div className="p-6 rounded-3xl bg-blue-50/70 dark:bg-[#070E20]/70 border border-blue-100 dark:border-blue-900/40 my-10">
       <div className="flex items-center gap-2 mb-4">
-        <Sparkles className="w-5 h-5 text-rose-500" />
+        <Sparkles className="w-5 h-5 text-blue-600 dark:text-blue-400" />
         <h4 className="font-serif font-bold text-lg text-gray-900 dark:text-white">
           Frequently Bought Together (Save 15%)
         </h4>
@@ -36,7 +36,7 @@ export const FrequentlyBoughtTogether = ({ currentProduct }) => {
         <div className="flex items-center gap-3 overflow-x-auto py-2">
           {allItems.map((item, idx) => (
             <React.Fragment key={item.id}>
-              <div className="flex items-center gap-3 bg-white dark:bg-[#16221F] p-3 rounded-2xl border border-rose-100 dark:border-white/5 shadow-sm min-w-[200px]">
+              <div className="flex items-center gap-3 bg-white dark:bg-[#0C1733] p-3 rounded-2xl border border-blue-200/80 dark:border-blue-800/40 shadow-sm min-w-[200px]">
                 <img
                   src={item.images[0]}
                   alt={item.name}
@@ -49,7 +49,7 @@ export const FrequentlyBoughtTogether = ({ currentProduct }) => {
                   <h5 className="text-xs font-bold text-gray-900 dark:text-white truncate">
                     {item.name}
                   </h5>
-                  <span className="text-xs font-bold text-rose-500">
+                  <span className="text-xs font-bold text-blue-600 dark:text-blue-400">
                     ₹{item.price.toFixed(2)}
                   </span>
                 </div>
@@ -63,19 +63,19 @@ export const FrequentlyBoughtTogether = ({ currentProduct }) => {
         </div>
 
         {/* Price & Action */}
-        <div className="shrink-0 p-4 bg-white dark:bg-[#16221F] rounded-2xl border border-rose-200 dark:border-white/10 text-center lg:text-right space-y-2">
+        <div className="shrink-0 p-4 bg-white dark:bg-[#0C1733] rounded-2xl border border-blue-200/80 dark:border-blue-800/40 text-center lg:text-right space-y-2">
           <div className="text-xs text-gray-500">
             Total Price: <span className="line-through text-gray-400">₹{originalBundlePrice.toFixed(2)}</span>
           </div>
           <div className="text-xl font-bold text-gray-900 dark:text-white">
             ₹{bundleDiscountPrice.toFixed(2)}
-            <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 block font-sans">
+            <span className="text-xs font-bold text-cyan-600 dark:text-cyan-400 block font-sans">
               Save ₹{savings.toFixed(2)} (15% Bundle OFF)
             </span>
           </div>
           <button
             onClick={handleAddBundleToCart}
-            className="w-full py-3 px-5 bg-rose-500 hover:bg-rose-600 text-white font-semibold rounded-xl text-xs shadow-md shadow-rose-500/25 transition-all flex items-center justify-center gap-2"
+            className="w-full py-3 px-5 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold rounded-xl text-xs uppercase tracking-wider shadow-md shadow-blue-500/25 transition-all flex items-center justify-center gap-2 border border-blue-400/30 active:scale-95"
           >
             <ShoppingBag className="w-4 h-4" /> Add All 3 to Cart
           </button>

@@ -24,20 +24,20 @@ export const CountdownTimer = ({ targetHours = 14 }) => {
   const formatNumber = (num) => String(num).padStart(2, '0');
 
   return (
-    <div className="flex items-center gap-2 text-rose-900 dark:text-rose-100 font-medium">
-      <div className="flex flex-col items-center bg-rose-100/80 dark:bg-rose-950/60 px-3 py-1.5 rounded-xl border border-rose-200 dark:border-rose-900/50 shadow-sm">
+    <div className="flex items-center gap-2 text-blue-900 dark:text-blue-100 font-medium">
+      <div className="flex flex-col items-center bg-blue-100/80 dark:bg-blue-950/60 px-3 py-1.5 rounded-xl border border-blue-200 dark:border-blue-900/50 shadow-sm">
         <span className="text-lg font-bold font-serif">{formatNumber(timeLeft.hours)}</span>
-        <span className="text-[10px] uppercase tracking-wider text-rose-600 dark:text-rose-300">Hours</span>
+        <span className="text-[10px] uppercase tracking-wider text-blue-600 dark:text-blue-300">Hours</span>
       </div>
-      <span className="text-xl font-serif text-rose-400 font-bold">:</span>
-      <div className="flex flex-col items-center bg-rose-100/80 dark:bg-rose-950/60 px-3 py-1.5 rounded-xl border border-rose-200 dark:border-rose-900/50 shadow-sm">
+      <span className="text-xl font-serif text-blue-400 font-bold">:</span>
+      <div className="flex flex-col items-center bg-blue-100/80 dark:bg-blue-950/60 px-3 py-1.5 rounded-xl border border-blue-200 dark:border-blue-900/50 shadow-sm">
         <span className="text-lg font-bold font-serif">{formatNumber(timeLeft.minutes)}</span>
-        <span className="text-[10px] uppercase tracking-wider text-rose-600 dark:text-rose-300">Mins</span>
+        <span className="text-[10px] uppercase tracking-wider text-blue-600 dark:text-blue-300">Mins</span>
       </div>
-      <span className="text-xl font-serif text-rose-400 font-bold">:</span>
-      <div className="flex flex-col items-center bg-rose-100/80 dark:bg-rose-950/60 px-3 py-1.5 rounded-xl border border-rose-200 dark:border-rose-900/50 shadow-sm">
-        <span className="text-lg font-bold font-serif text-rose-600 dark:text-rose-400 animate-pulse">{formatNumber(timeLeft.seconds)}</span>
-        <span className="text-[10px] uppercase tracking-wider text-rose-600 dark:text-rose-300">Secs</span>
+      <span className="text-xl font-serif text-blue-400 font-bold">:</span>
+      <div className="flex flex-col items-center bg-blue-100/80 dark:bg-blue-950/60 px-3 py-1.5 rounded-xl border border-blue-200 dark:border-blue-900/50 shadow-sm">
+        <span className="text-lg font-bold font-serif text-blue-600 dark:text-blue-400 animate-pulse">{formatNumber(timeLeft.seconds)}</span>
+        <span className="text-[10px] uppercase tracking-wider text-blue-600 dark:text-blue-300">Secs</span>
       </div>
     </div>
   );

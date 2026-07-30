@@ -23,10 +23,10 @@ export const SearchModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 px-4 bg-black/60 backdrop-blur-md animate-fade-in">
-      <div className="relative w-full max-w-2xl bg-white dark:bg-[#16221F] rounded-3xl shadow-2xl overflow-hidden border border-rose-100 dark:border-white/10 animate-slide-down">
+      <div className="relative w-full max-w-2xl bg-white dark:bg-[#0C1733] rounded-3xl shadow-2xl overflow-hidden border border-blue-200/80 dark:border-blue-800/40 animate-slide-down">
         {/* Header Search Bar */}
-        <div className="flex items-center gap-3 p-4 border-b border-rose-100 dark:border-white/10">
-          <Search className="w-5 h-5 text-rose-500 shrink-0" />
+        <div className="flex items-center gap-3 p-4 border-b border-blue-100 dark:border-blue-900/40">
+          <Search className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0" />
           <input
             type="text"
             placeholder="Search serums, lipsticks, fragrances, brands..."
@@ -45,7 +45,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
           )}
           <button
             onClick={onClose}
-            className="p-1.5 rounded-full text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 bg-gray-100 dark:bg-emeraldDark-800"
+            className="p-1.5 rounded-full text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 bg-gray-100 dark:bg-[#070E20]"
           >
             <X className="w-4 h-4" />
           </button>
@@ -58,7 +58,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
               {/* Popular Searches */}
               <div className="mb-6">
                 <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-1.5">
-                  <TrendingUp className="w-3.5 h-3.5 text-rose-500" /> Popular Searches
+                  <TrendingUp className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" /> Popular Searches
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {['Hyaluronic Acid', 'Velvet Liquid Lip', 'Rose Quartz Gua Sha', 'Niacinamide', 'Eau de Parfum', 'Argan Oil'].map(
@@ -66,7 +66,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
                       <button
                         key={idx}
                         onClick={() => setQuery(tag)}
-                        className="px-3 py-1.5 rounded-full bg-rose-50 dark:bg-emeraldDark-800 text-xs font-semibold text-rose-700 dark:text-rose-300 hover:bg-rose-100 dark:hover:bg-rose-950/60 transition-colors"
+                        className="px-3 py-1.5 rounded-full bg-blue-50 dark:bg-[#070E20] text-xs font-semibold text-blue-700 dark:text-blue-300 hover:bg-blue-100 transition-colors border border-blue-200/60 dark:border-blue-800/40"
                       >
                         {tag}
                       </button>
@@ -78,7 +78,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
               {/* Browse Categories */}
               <div>
                 <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-champagne-500" /> Browse Categories
+                  <Sparkles className="w-3.5 h-3.5 text-cyan-500" /> Browse Categories
                 </h4>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {categories.map((cat) => (
@@ -86,7 +86,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
                       key={cat.id}
                       to={`/shop?category=${cat.id}`}
                       onClick={onClose}
-                      className="p-3 rounded-2xl bg-gray-50 dark:bg-[#0B1513] hover:bg-rose-50 dark:hover:bg-emeraldDark-800 transition-colors flex items-center gap-3 group"
+                      className="p-3 rounded-2xl bg-gray-50 dark:bg-[#070E20] hover:bg-blue-50 dark:hover:bg-[#0C1733] border border-blue-100 dark:border-blue-900/40 transition-all flex items-center gap-3 group shadow-sm"
                     >
                       <img
                         src={cat.image}
@@ -97,7 +97,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
                         className="w-10 h-10 rounded-xl object-cover"
                       />
                       <div>
-                        <h5 className="text-xs font-bold text-gray-800 dark:text-gray-200 group-hover:text-rose-500">
+                        <h5 className="text-xs font-bold text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                           {cat.name}
                         </h5>
                         <span className="text-[10px] text-gray-400">{cat.itemCount}</span>
@@ -111,7 +111,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-semibold text-gray-500">
-                  Found <strong className="text-rose-500">{filteredProducts.length}</strong> matching products
+                  Found <strong className="text-blue-600 dark:text-blue-400">{filteredProducts.length}</strong> matching products
                 </span>
               </div>
 
@@ -127,7 +127,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
                       key={p.id}
                       to={`/product/${p.id}`}
                       onClick={onClose}
-                      className="p-3 rounded-2xl border border-rose-100 dark:border-white/10 hover:border-rose-300 bg-white dark:bg-[#0B1513] transition-all flex items-center gap-3 group"
+                      className="p-3 rounded-2xl border border-blue-200/80 dark:border-blue-800/40 hover:border-blue-400 bg-white dark:bg-[#070E20] transition-all flex items-center gap-3 group shadow-sm"
                     >
                       <img
                         src={p.images[0]}
@@ -138,10 +138,10 @@ export const SearchModal = ({ isOpen, onClose }) => {
                         className="w-14 h-14 rounded-xl object-cover shrink-0"
                       />
                       <div className="flex-1 min-w-0">
-                        <span className="text-[10px] uppercase font-bold text-rose-500">
+                        <span className="text-[10px] uppercase font-bold text-blue-600 dark:text-blue-400">
                           {p.brand}
                         </span>
-                        <h5 className="text-xs font-bold text-gray-900 dark:text-white truncate group-hover:text-rose-500">
+                        <h5 className="text-xs font-bold text-gray-900 dark:text-white truncate group-hover:text-blue-600 dark:group-hover:text-blue-400">
                           {p.name}
                         </h5>
                         <span className="text-xs font-bold text-gray-900 dark:text-gray-200">
